@@ -1,0 +1,37 @@
+
+<%@ page import="model.TaiKhoan" %>
+<%
+    TaiKhoan headerUser =
+        (TaiKhoan) session.getAttribute("taiKhoan");
+
+    boolean headerIsManager = headerUser != null
+        && "QUAN_LY".equals(headerUser.getVaiTro());
+
+    String headerHome = headerIsManager
+        ? "gdChinhQL.jsp"
+        : "gdChinhKH.jsp";
+%>
+
+<header class="topbar">
+    <a class="logo"
+       href="<%= request.getContextPath() %>/<%= headerHome %>">
+        REST<span>MAN</span>
+    </a>
+
+    <div class="topright">
+        <span class="user-pill">
+            <% if (headerIsManager) { %>
+                Nh&#226;n vi&#234;n qu&#7843;n l&#253;
+            <% } else { %>
+                Kh&#225;ch h&#224;ng
+            <% } %>
+        </span>
+
+        <form method="post"
+              action="<%= request.getContextPath() %>/dang-xuat">
+            <button class="btn btn-outline" type="submit">
+                &#272;&#259;ng xu&#7845;t
+            </button>
+        </form>
+    </div>
+</header>

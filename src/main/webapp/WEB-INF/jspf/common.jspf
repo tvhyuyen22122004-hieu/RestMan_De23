@@ -1,0 +1,7 @@
+<%@ page import="model.*,dao.*,java.util.*,java.time.*,java.time.format.*,java.text.*" %>
+<%!
+ public String esc(String s){if(s==null)return "";return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;").replace("\"","&quot;").replace("'","&#39;");}
+ public String money(long v){return String.format(java.util.Locale.US,"%,d",v).replace(',','.');}
+ public String dateTime(LocalDateTime d){return d.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));}
+ public int parseId(String v){try{return Integer.parseInt(v);}catch(Exception e){return -1;}}
+%>

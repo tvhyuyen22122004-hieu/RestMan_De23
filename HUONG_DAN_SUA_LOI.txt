@@ -1,0 +1,15 @@
+RESTMAN - BAN SUA LOI JSP HTTP 500 (14/11/2026)
+
+Da sua: src/main/webapp/WEB-INF/jspf/common.jspf
+- Ham esc(String) truoc do co chuoi Java sai cu phap: replace(""", ...)
+- Da sua thanh replace("\"", ...)
+
+HUONG DAN:
+1. Mo thu muc RestMan_2_Module (co pom.xml) trong VS Code.
+2. Chay: mvn clean package
+3. Dung Tomcat neu dang chay. Xoa webapps/resmain va webapps/resmain.war cu de tranh tai nguyen trien khai cu.
+4. Copy target/resmain.war vao D:\apache-tomcat-9.0.115\webapps\resmain.war
+5. Khoi dong Tomcat va mo http://localhost:8080/resmain/
+
+Luu y: Maven BUILD SUCCESS khong tu dong kiem tra bien dich JSP tren Tomcat.
+Ban nay da sua loi cu the tu anh bao loi; chua duoc kiem thu thuc te tren Tomcat cua ban.
